@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Create An Account{% endblock %} </title> 
+{% load crispy_forms_tags %}
+{%block content%}
+<a class="navbar-nav me-auto mb-2 mb-lg-0" aria-current="page" text color="black" href="{% url 'logout' %}">Logout</a>
+<form method="POST" class="form-group">
+    {%csrf_token%}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Register</button>
+</form>
+{% endblock %}
